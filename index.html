@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zum Bienwald — Griechische Küche mit Charakter</title>
-    <meta name="description" content="Zum Bienwald — griechische Küche. Meze, Grill, mediterrane Klassiker. Reservierung empfohlen." />
+    <meta name="description" content="Zum Bienwald — griechische Küche. Mediterrane Klassiker. Reservierung empfohlen." />
 
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -18,9 +18,9 @@
           <span class="topstrip__text">Griechische Küche • Meze • Grill</span>
         </div>
         <div class="topstrip__right">
-          <a href="tel:+49123456789" class="topstrip__link">+49 123 456789</a>
+          <a href="tel: 06340 9052188" class="topstrip__link"></a>
           <span class="dot">•</span>
-          <a href="#kontakt" class="topstrip__link">Adresse</a>
+          <a href="#kontakt" class="topstrip__link">Bahnhofstraße 100, 76889 Steinfeld - Am Tennisplatz </a>
         </div>
       </div>
     </div>
@@ -47,7 +47,7 @@
           <a href="#galerie">Galerie</a>
           <a href="#bewertungen">Bewertungen</a>
           <a href="#reservierung">Reservierung</a>
-          <a class="nav__cta" href="tel:+49123456789">Anrufen</a>
+          <a class="nav__cta" href="tel:06340 9052188">Anrufen</a>
         </nav>
       </div>
     </header>
@@ -64,28 +64,65 @@
             <h1>Griechische Küche.<br />Ehrlich familiär geführt.</h1>
             <p class="lead">
               Ein neues Restaurant mit Erfahrung aus dem Familienbetrieb: Meze zum Teilen, Spezialitäten vom Grill und
-              mediterrane Klassiker – mit Charakter serviert.
+              mediterrane Klassiker.
             </p>
 
             <div class="hero__actions">
-              <a class="btn btn--primary" href="#reservierung">Tisch reservieren</a>
               <a class="btn btn--ghost" href="#speisekarte">Highlights ansehen</a>
             </div>
 
             <div class="hero__meta">
-              <div class="meta">
+              <div class="meta meta--hours">
                 <span class="meta__k">Öffnungszeiten</span>
-                <span class="meta__v">Di–So 17:00–23:00</span>
+
+                <div class="meta__v hours">
+                  <div class="hours__col">
+                    <div class="hours__title">Sommer <span class="muted">(01.05 – 30.09)</span></div>
+
+                    <div class="hours-mini__row">
+                      <span class="hours__label">Di – Sa</span>
+                      <span class="hours__time">14:00 – 24:00</span>
+                      <span class="hours__note">Küche bis 22:00</span>
+                    </div>
+
+                    <div class="hours-mini__row">
+                      <span class="hours__label">So & Feiertage</span>
+                      <span class="hours__time">11:30 – 14:00</span>
+                      <span class="hours__note"></span>
+                    </div>
+                  </div>
+
+                  <div class="hours__col">
+                    <div class="hours__title">Winter <span class="muted">(01.10 – 30.04)</span></div>
+
+                    <div class="hours-mini__row">
+                      <span class="hours__label">Di – Sa</span>
+                      <span class="hours__time">17:00 – 24:00</span>
+                      <span class="hours__note">Küche bis 22:00</span>
+                    </div>
+
+                    <div class="hours-mini__row">
+                      <span class="hours__label">So & Feiertage</span>
+                      <span class="hours__time">11:30 – 14:30</span>
+                      <span class="hours__note">Küche bis 21:00</span>
+                    </div>
+
+                    <div class="hours__closed">Montag Ruhetag</div>
+                  </div>
+                </div>
               </div>
-              <div class="meta">
-                <span class="meta__k">Telefon</span>
-                <span class="meta__v"><a href="tel:+49123456789">+49 123 456789</a></span>
-              </div>
-              <div class="meta">
-                <span class="meta__k">Adresse</span>
-                <span class="meta__v">Straße Nr., PLZ Ort</span>
-              </div>
-            </div>
+
+  <div class="meta">
+    <span class="meta__k">Telefon</span>
+    <p></p>
+    <span class="meta__v"><a href="tel:063409052188">06340 9052188</a></span>
+  </div>
+
+  <div class="meta">
+    <span class="meta__k">Adresse</span>
+    <span class="meta__v">Bahnhofstraße 100, 76889 Steinfeld</span>
+  </div>
+</div>
           </div>
 
           <div class="hero__panel">
@@ -100,7 +137,7 @@
                 Am schnellsten telefonisch. Für Feiern oder größere Gruppen einfach kurz anrufen.
               </p>
 
-              <a class="btn btn--primary btn--wide" href="tel:+49123456789">Jetzt anrufen</a>
+              <a class="btn btn--primary btn--wide" href="tel:06340 9052188">Jetzt anrufen</a>
 
               <div class="panel__rows">
                 <div class="row">
@@ -126,9 +163,10 @@
         <div class="container grid-2">
           <div>
             <h2>Über uns</h2>
+            <div class="about__img" style="background-image:url('assets/about-1.png')"></div>
             <p class="lead2">
               „Zum Bienwald“ ist der nächste Schritt nach Jahren im Familienrestaurant. Modern
-              gedacht – aber mit der gleichen Gastfreundschaft, die man in Griechenland erwartet.
+              gedacht, aber mit der gleichen Gastfreundschaft, die man in Griechenland erwartet.
             </p>
 
             <div class="story card">
@@ -173,14 +211,15 @@
               <p class="muted">Ein kurzer Einblick </p>
             </div>
             <div class="section__actions">
-              <a class="btn btn--ghost" href="#" onclick="return false;" aria-disabled="true">Speisekarte (PDF)</a>
+              <a class="btn btn--ghost" href="assets/speisekarte.pdf" target="_blank" rel="noopener">Speisekarte (PDF)</a>
               <a class="btn btn--primary" href="#reservierung">Reservieren</a>
             </div>
           </div>
 
           <div class="cards">
             <article class="food card">
-              <h3>Meze-Platte</h3>
+              <div class="food__img" style="background-image:url('assets/dish-vorspeisenteller.png'); background-position: 50% 70%;"></div>
+              <h3>Vorspeisen-Platte</h3>
               <p class="muted">Für den Tisch, perfekt zum Teilen und Probieren.</p>
               <div class="food__meta">
                 <span class="chip">Starter</span>
@@ -189,8 +228,9 @@
             </article>
 
             <article class="food card">
-              <h3>Gyros Spezial</h3>
-              <p class="muted">Klassiker mit eigener Handschrift </p>
+              <div class="food__img" style="background-image:url('assets/dish-chefteller.png'); background-position: 50% 70%;"></div>
+              <h3>Chef-Teller</h3>
+              <p class="muted">Grill-Variationen.</p>
               <div class="food__meta">
                 <span class="chip">Signature</span>
                 <span class="chip chip--line">Beliebt</span>
@@ -198,8 +238,9 @@
             </article>
 
             <article class="food card">
-              <h3>Bifteki mit Feta</h3>
-              <p class="muted">Saftig vom Grill, mit typisch griechischer Würze.</p>
+              <div class="food__img" style="background-image:url('assets/dish-lendenspiess.png'); background-position: 50% 70%;"></div>
+              <h3>Lendenspieß</h3>
+              <p class="muted">Zartes Fleisch, heißer Grill.</p>
               <div class="food__meta">
                 <span class="chip">Grill</span>
                 <span class="chip chip--line">Klassiker</span>
@@ -207,14 +248,14 @@
             </article>
 
             <article class="food card">
-              <h3>Oktopus / Fisch</h3>
-              <p class="muted">Mediterran, zart, zitronig – je nach Tagesangebot.</p>
+              <div class="food__img" style="background-image:url('assets/dish-fisch.png'); background-position: 50% 70%;"></div>
+              <h3>Fisch vom Grill</h3>
+              <p class="muted">Mediterran, frisch mit frischen Beilagen.</p>
               <div class="food__meta">
                 <span class="chip">Meer</span>
-                <span class="chip chip--line">Tagesangebot</span>
+                <span class="chip chip--line">Empfehlung</span>
               </div>
             </article>
-          </div>
 
           <div class="note card card--soft">
           </div>
@@ -227,19 +268,27 @@
           <div class="section__head">
             <div>
               <h2>Galerie</h2>
-              <p class="muted">Ambiente & Teller</p>
+              <p class="muted">Ambiente</p>
             </div>
           </div>
 
-          <div class="gallery">
-            <button class="g" data-src="assets/gallery-1.jpg" aria-label="Bild 1"></button>
-            <button class="g" data-src="assets/gallery-2.jpg" aria-label="Bild 2"></button>
-            <button class="g" data-src="assets/gallery-3.jpg" aria-label="Bild 3"></button>
-            <button class="g" data-src="assets/gallery-4.jpg" aria-label="Bild 4"></button>
-            <button class="g g--wide" data-src="assets/gallery-5.jpg" aria-label="Bild 5"></button>
-            <button class="g" data-src="assets/gallery-6.jpg" aria-label="Bild 6"></button>
+          <div class="gallery gallery--img">
+            <button class="gi" data-src="assets/hero.png" aria-label="Ambiente">
+              <img src="assets/hero.png" alt="Ambiente" loading="lazy">
+            </button>
+
+            <button class="gi" data-src="assets/about-1.png" aria-label="Details">
+              <img src="assets/about-1.png" alt="Details" loading="lazy">
+            </button>
+
+            <button class="gi" data-src="assets/about-2.png" aria-label="Eingang">
+              <img src="assets/about-2.png" alt="Eingang" loading="lazy">
+            </button>
+
+            <button class="gi" data-src="assets/about-3.png" aria-label="Atmosphäre">
+              <img src="assets/about-3.png" alt="Atmosphäre" loading="lazy">
+            </button>
           </div>
-        </div>
       </section>
 
       <!-- Reviews -->
@@ -248,7 +297,6 @@
           <div class="section__head">
             <div>
               <h2>Bewertungen</h2>
-              <p class="muted">Platzhalter</p>
             </div>
           </div>
 
@@ -284,10 +332,10 @@
               <div>
                 <strong>Telefonische Reservierung</strong>
                 <p class="muted" style="margin:6px 0 0;">
-                  Gruppen, Anlässe, Sonderwünsche – kurz anrufen.
+                  Bei Gruppen, Anlässe oder Sonderwünschen einfach gerne kurz anrufen.
                 </p>
               </div>
-              <a class="btn btn--primary" href="tel:+49123456789">+49 123 456789</a>
+              <a class="btn btn--primary" href="tel:06340 9052188">06340 9052188</a>
             </div>
 
             <hr class="hr" />
@@ -295,34 +343,14 @@
           </div>
 
           <aside class="card card--soft" id="kontakt">
-            <h2>Kontakt</h2>
+            <h2>Anfahrt</h2>
 
             <div class="contact">
-              <div class="contact__row">
-                <span>Adresse</span>
-                <strong>Straße Nr., PLZ Ort</strong>
-              </div>
-              <div class="contact__row">
-                <span>Telefon</span>
-                <strong><a href="tel:+49123456789">+49 123 456789</a></strong>
-              </div>
-              <div class="contact__row">
-                <span>E-Mail</span>
-                <strong><a href="mailto:info@zumbienwald.de">info@zumbienwald.de</a></strong>
-              </div>
-            </div>
-
             <div class="map card">
               <div class="map__ph">
                 <strong>Karte folgt</strong>
                 <small class="muted">Google Maps / OSM Embed später hier rein.</small>
               </div>
-            </div>
-
-            <div class="hours">
-              <h3>Öffnungszeiten</h3>
-              <div class="hours__row"><span>Mo</span><strong>Ruhetag</strong></div>
-              <div class="hours__row"><span>Di–So</span><strong>17:00 – 23:00</strong></div>
             </div>
           </aside>
         </div>
@@ -347,7 +375,7 @@
 
     <script src="script.js"></script>
 
-    <a class="fab" href="tel:+49123456789" aria-label="Jetzt anrufen">
+    <a class="fab" href="tel:06340 9052188" aria-label="Jetzt anrufen">
     Anrufen
     </a>
   </body>
