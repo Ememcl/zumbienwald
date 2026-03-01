@@ -63,7 +63,7 @@ body::after{
   /* Vignette für "Tiefe" */
   background:
     radial-gradient(900px 700px at 50% 30%, transparent 55%, rgba(0,0,0,0.55) 100%);
-  opacity: 0.55;
+  opacity: 0.38;
 }
 
 a{ color:inherit; text-decoration:none; }
@@ -178,14 +178,13 @@ a{ color:inherit; text-decoration:none; }
   background:
     radial-gradient(900px 520px at 20% 10%, rgba(200,161,90,0.16), transparent 55%),
     linear-gradient(180deg, rgba(0,0,0,0.20), rgba(0,0,0,0.75)),
-    url("assets/hero.jpg");
+    url("assets/hero.png");
   background-size: cover;
   background-position: center;
-  filter: saturate(1.02);
 
     /* ...dein vorhandener hero__bg bleibt... */
   transform: scale(1.02);
-  filter: saturate(1.05) contrast(1.05) brightness(0.92);
+  filter: saturate(1.05) contrast(1.05) brightness(0.99);
 }
 
 .hero__overlay{
@@ -196,7 +195,7 @@ a{ color:inherit; text-decoration:none; }
   background:
     radial-gradient(900px 520px at 18% 20%, rgba(200,161,90,0.18), transparent 58%),
     radial-gradient(900px 520px at 85% 10%, rgba(47,158,115,0.10), transparent 60%),
-    linear-gradient(90deg, rgba(11,13,16,0.92), rgba(11,13,16,0.55), rgba(11,13,16,0.90));
+    linear-gradient(90deg, rgba(11,13,16,0.86), rgba(11,13,16,0.45), rgba(11,13,16,0.84));
 }
 .hero__inner{
   position:relative;
@@ -261,12 +260,12 @@ h1{
 .btn--wide{ width:100%; }
 
 .hero__meta{
-  display:grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-  margin-top: 18px;
-  max-width: 520px;
+  display: grid;
+  grid-template-columns: 3.4fr 1fr 1.2fr; /* Öffnungszeiten bekommt mehr Platz */
+  gap: 18px;
+  margin-top: 26px;
 }
+
 .meta{
   border:1px solid rgba(255,255,255,0.10);
   background: rgba(11,13,16,0.45);
@@ -275,14 +274,96 @@ h1{
   display:flex;
   justify-content:space-between;
   gap:12px;
+  overflow: hidden;   /* verhindert, dass Text aus der Kachel herausragt */
+  min-width: 0;       /* wichtig in CSS Grid, sonst kann Inhalt Spalten aufsprengen */
 }
+
+/* Alle Meta-Kacheln: gleiche Grundhöhe + sauberer Innenabstand */
+.hero__meta .meta{
+  min-height: 64px;
+  align-items: center;
+}
+
+/* Öffnungszeiten dürfen mehrzeilig sein und oben starten */
+.hero__meta .meta--hours{
+  align-items: flex-start;
+}
+
+/* Adresse: darf umbrechen, aber bleibt sauber */
+.hero__meta .meta:nth-child(3) .meta__v{
+  text-align: right;
+  white-space: normal;
+  line-height: 1.25;
+}
+
+.meta--hours{
+  align-items: flex-start;
+}
+
+.hours-mini__row{
+  display: grid;
+  grid-template-columns: 1.4fr 0.9fr 1fr;
+  align-items: baseline;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px dashed rgba(255,255,255,0.12);
+  font-weight: 700;
+}
+
+.hours-mini__row:last-child{
+  border-bottom: none;
+}
+
+/* Uhrzeiten sauber rechts */
+.hours-mini__row span:nth-child(2){
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Küchen-Hinweis */
+.hours-mini__row span:nth-child(3){
+  text-align: right;
+  color: rgba(255,255,255,0.72);
+  white-space: nowrap;
+}
+
+.hm-label{
+  text-align: left;
+}
+
+.hm-time{
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.hm-note{
+  text-align: right;
+  color: rgba(255,255,255,0.72);
+  white-space: normal;
+  line-height: 1.2;
+}
+
+@media (max-width: 560px){
+  .hours-mini{ grid-template-columns: 1fr; }
+
+  .hero__meta{
+    grid-template-columns: 1fr;
+    max-width: none;
+  }
+}
+
 .meta__k{ color: rgba(255,255,255,0.65); font-size: 13px; }
-.meta__v{ font-weight: 800; font-size: 13px; }
+.meta__v{ 
+  font-weight: 800; 
+  font-size: 13px; 
+  min-width: 0;
+}
 
 /* Right panel */
 .card{
   border:1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.075);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
@@ -356,6 +437,21 @@ h2{
   align-items:start;
 }
 
+.about__img{
+  height: 260px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 18px 60px rgba(0,0,0,0.45);
+  margin: 10px 0 16px;
+}
+
+@media (max-width: 560px){
+  .about__img{ height: 220px; }
+}
+
 /* Story */
 .story h3{
   margin: 0 0 8px;
@@ -410,7 +506,23 @@ h2{
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
 }
-.food{ padding: 16px; }
+.food{ padding: 16px; overflow: hidden; }
+
+.food__img{
+  width: 100%;
+  aspect-ratio: 4 / 3;      /* gleichmäßige Proportion */
+  border-radius: 14px;
+  margin-bottom: 14px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background-size: cover;
+  background-position: 50% 60%;
+  background-repeat: no-repeat;
+  box-shadow: 0 16px 44px rgba(0,0,0,0.40);
+}
+
+@media (max-width: 560px){
+  .food__img{ height: 175px; }
+}
 .food h3{
   margin:0 0 8px;
   font-family: Fraunces, ui-serif, Georgia, serif;
@@ -432,32 +544,123 @@ h2{
 .note{ margin-top: 14px; padding: 16px; }
 
 /* Gallery */
-.gallery{
-  display:grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 10px;
+/* Gallery with real images (natural aspect ratios) */
+
+/* Gallery (Masonry) – keine Löcher */
+.gallery--img{
+  columns: 2;
+  column-gap: 14px;
 }
-.g{
-  appearance:none;
-  border: 1px solid rgba(255,255,255,0.10);
-  border-radius: 16px;
-  background:
-    radial-gradient(220px 140px at 20% 30%, rgba(200,161,90,0.20), transparent 60%),
-    radial-gradient(220px 140px at 80% 60%, rgba(47,158,115,0.12), transparent 60%),
-    rgba(255,255,255,0.04);
-  height: 170px;
-  cursor:pointer;
-  box-shadow: 0 18px 60px rgba(0,0,0,0.45);
-  transition: transform 160ms ease, background 160ms ease;
+
+/* jedes Item als "Spalte-Block" */
+.gallery--img .gi{
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 14px;
+  break-inside: avoid;
 }
+
+/* Bild bleibt natürlich */
+.gallery--img .gi img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+/* optional: erstes Bild etwas "Hero" (aber ohne Löcher) */
+.gallery--img .gi:first-child{
+  /* leicht größerer Look */
+  transform: translateZ(0);
+}
+
+.gi{
+  appearance: none;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 0;
+  background: transparent;
+  box-shadow: 0 26px 80px rgba(0,0,0,0.55);
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.gi:hover{
+  border-color: rgba(200,161,90,0.35);
+  box-shadow: 0 30px 95px rgba(0,0,0,0.65);
+}
+
+/* the image defines height naturally */
+.gi img{
+  display: block;
+  width: 100%;
+  height: auto;           /* <- das ist der Schlüssel */
+}
+
 .g:hover{
-  transform: translateY(-2px);
-  background:
-    radial-gradient(220px 140px at 20% 30%, rgba(200,161,90,0.26), transparent 60%),
-    radial-gradient(220px 140px at 80% 60%, rgba(47,158,115,0.14), transparent 60%),
-    rgba(255,255,255,0.05);
+  transform: translateY(-3px);
+  border-color: rgba(200,161,90,0.35);
+  box-shadow: 0 30px 95px rgba(0,0,0,0.65);
 }
-.g--wide{ grid-column: span 2; }
+
+/* großes Bild links */
+.g--hero{
+  grid-row: span 2;
+}
+
+/* breites Bild (falls du es nutzt) */
+.g--wide{
+  grid-column: span 2;
+}
+
+/* tiles */
+.gallery--featured .g{
+  appearance:none;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 18px;
+  height: 320px;                 /* deutlich größer */
+  cursor:pointer;
+  box-shadow: 0 22px 70px rgba(0,0,0,0.50);
+
+  background-size: cover;
+  background-position: center;   /* später optional pro Bild fein justieren */
+  background-repeat: no-repeat;
+
+  transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+}
+
+/* bigger hero-like tile */
+.gallery--featured .g--tall{
+  height: 420px;
+}
+
+/* wide tile across both columns */
+.gallery--featured .g--wide{
+  grid-column: span 2;
+  height: 340px;
+}
+
+/* Hover: NICHT verschieben/zoomen, nur Premium-Glow */
+.gallery--featured .g:hover{
+  transform: none;
+  border-color: rgba(200,161,90,0.35);
+  box-shadow: 0 26px 90px rgba(0,0,0,0.60);
+}
+
+/* Mobile: 1 column, große Kacheln */
+@media (max-width: 560px){
+  .gallery--featured{
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .gallery--featured .g,
+  .gallery--featured .g--tall,
+  .gallery--featured .g--wide{
+    grid-column: auto;
+    height: 260px;
+    border-radius: 16px;
+  }
+}
 
 /* Quotes */
 .quotes{
@@ -544,7 +747,7 @@ textarea{ resize: vertical; }
     repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0 14px, transparent 14px 28px);
 }
 
-.hours{ margin-top: 16px; }
+.hours{ margin-top: 14px; }
 .hours h3{
   margin: 0 0 10px;
   font-family: Fraunces, ui-serif, Georgia, serif;
@@ -602,6 +805,53 @@ textarea{ resize: vertical; }
   font-size: 26px;
   line-height: 1;
   cursor:pointer;
+}
+
+/* Consistent card spacing everywhere */
+.card{
+  padding: 20px;              /* vorher war teils kein Padding oder inkonsistent */
+  border-radius: 20px;
+}
+
+@media (max-width: 560px){
+  .card{ padding: 18px; }
+}
+
+/* Typography rhythm inside cards */
+.card > :first-child{ margin-top: 0 !important; }
+.card > :last-child{ margin-bottom: 0 !important; }
+
+.card h2, .card h3{
+  margin: 0 0 10px;
+}
+
+.card p{
+  margin: 0 0 12px;
+}
+
+/* Make these sections match the Highlights spacing */
+.story,
+.panel,
+.quote,
+.food,
+.note,
+.call,
+.map,
+.card--soft{
+  padding: 20px;
+}
+
+@media (max-width: 560px){
+  .story,
+  .panel,
+  .quote,
+  .food,
+  .note,
+  .call,
+  .map,
+  .card--soft{
+    padding: 18px;
+  }
 }
 
 /* Responsive */
@@ -699,18 +949,84 @@ textarea{ resize: vertical; }
   /* Highlights: 1 Spalte statt 2 */
   .cards{ grid-template-columns: 1fr !important; }
 
-  /* Gallery: 2 Spalten sauber */
-  .gallery{
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+/* Gallery (Mobile) — kompakt & dezent */
+.gallery{
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 10px;
+}
+
+.g{
+  height: 160px;
+  border-radius: 14px;
+}
+
+/* hero nimmt 2 Spalten, aber nicht zu riesig */
+.g--hero{
+  grid-column: span 2;
+  height: 190px;
+}
+
+/* Gallery (Mobile) — kompakt & dezent */
+.gallery{
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 10px;
+}
+
+.g{
+  height: 160px;
+  border-radius: 14px;
+}
+
+/* hero nimmt 2 Spalten, aber nicht zu riesig */
+.g--hero{
+  grid-column: span 2;
+  height: 190px;
+}
+
+/* wide falls vorhanden */
+.g--wide{
+  grid-column: span 2;
+  height: 170px;
+}
+
+/* großes Bild verliert Dominanz */
+.gallery--curated .g--hero{
+  grid-column: span 2;
+  height: 190px;
+}
+
+@media (max-width: 560px){
+  .gallery--img{
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
   }
-  .g{ height: 140px; border-radius: 14px; }
-  .g--wide{ grid-column: span 2; height: 160px; }
 
-  /* Form: 1 Spalte */
-  .form__grid{ grid-template-columns: 1fr; }
-  .span-2{ grid-column: auto; }
+  /* großes Bild nicht mehr 2 Reihen hoch */
+  .gallery--img .gi:first-child{
+    grid-row: auto;
+    grid-column: span 2;
+  }
 
-  /* Callout / Call card: vertikal */
-  .call{ flex-direction: column; align-items: stretch; }
+  .gi{ border-radius: 14px; }
+}
+}
+
+/* FIX: Öffnungszeiten in Hero-Meta dürfen mehrzeilig sein */
+.metaRow{
+  align-items: stretch !important;
+}
+
+.meta{
+  align-items: flex-start !important;
+}
+
+.meta__v{
+  display: block !important;
+  white-space: normal !important;
+}
+
+.meta *{
+  min-width: 0;
 }
