@@ -85,11 +85,17 @@
                       <span class="hours__note">Küche bis 22:00</span>
                     </div>
 
-                    <div class="hours-mini__row">
-                      <span class="hours__label">So & Feiertage</span>
-                      <span class="hours__time">11:30 – 14:00</span>
-                      <span class="hours__note"></span>
-                    </div>
+                    <!-- So & Feiertage (Sommer) -->
+                      <div class="hours-mini__row">
+                        <span class="hm-label">So & Feiertage</span>
+                        <span class="hm-time">11:30 – 14:00</span>
+                        <span class="hm-note"></span>
+                      </div>
+                      <div class="hours-mini__row">
+                        <span class="hm-label hm-ghost"></span>
+                        <span class="hm-time">17:00 – 23:00</span>
+                        <span class="hm-note">Küche bis 21:00</span>
+                      </div>
                   </div>
 
                   <div class="hours__col">
@@ -101,11 +107,17 @@
                       <span class="hours__note">Küche bis 22:00</span>
                     </div>
 
-                    <div class="hours-mini__row">
-                      <span class="hours__label">So & Feiertage</span>
-                      <span class="hours__time">11:30 – 14:30</span>
-                      <span class="hours__note">Küche bis 21:00</span>
-                    </div>
+                    <!-- So & Feiertage (Winter) -->
+                      <div class="hours-mini__row">
+                        <span class="hm-label">So & Feiertage</span>
+                        <span class="hm-time">11:30 – 14:30</span>
+                        <span class="hm-note"></span>
+                      </div>
+                      <div class="hours-mini__row">
+                        <span class="hm-label hm-ghost"></span>
+                        <span class="hm-time">17:00 – 23:00</span>
+                        <span class="hm-note">Küche bis 21:00</span>
+                      </div>
 
                     <div class="hours__closed">Montag Ruhetag</div>
                   </div>
@@ -256,8 +268,6 @@
                 <span class="chip chip--line">Empfehlung</span>
               </div>
             </article>
-
-          <div class="note card card--soft">
           </div>
         </div>
       </section>
@@ -312,7 +322,7 @@
             </figure>
 
             <figure class="quote card">
-              <blockquote>„Immer wieder ein Erlebni!“</blockquote>
+              <blockquote>„Immer wieder ein Erlebnis!“</blockquote>
               <figcaption>— Stammgast</figcaption>
             </figure>
           </div>
@@ -328,6 +338,8 @@
               Für einen entspannten Abend empfehlen wir zu reservieren, am schnellsten telefonisch.
             </p>
 
+            <p></p>
+
             <div class="call card card--soft">
               <div>
                 <strong>Telefonische Reservierung</strong>
@@ -335,23 +347,23 @@
                   Bei Gruppen, Anlässe oder Sonderwünschen einfach gerne kurz anrufen.
                 </p>
               </div>
+              <p></p>
               <a class="btn btn--primary" href="tel:06340 9052188">06340 9052188</a>
             </div>
-
-            <hr class="hr" />
 
           </div>
 
           <aside class="card card--soft" id="kontakt">
             <h2>Anfahrt</h2>
 
-            <div class="contact">
-            <div class="map card">
-              <div class="map__ph">
-                <strong>Karte folgt</strong>
-                <small class="muted">Google Maps / OSM Embed später hier rein.</small>
+              <div class="map">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2615.534107787857!2d8.039789412570066!3d49.03846737123762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4796f9d693c13ef7%3A0x9d73e7841447d895!2sRestaurant%20zum%20Bienwald!5e0!3m2!1sde!2sde!4v1772438051567!5m2!1sde!2sde"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  allowfullscreen>
+                </iframe>
               </div>
-            </div>
           </aside>
         </div>
       </section>
@@ -361,8 +373,8 @@
       <div class="container footer__inner">
         <p class="muted">© <span id="year"></span> Zum Bienwald</p>
         <p class="muted">
-          <a href="#" onclick="return false;">Impressum</a> ·
-          <a href="#" onclick="return false;">Datenschutz</a>
+          <a href="impressum.html">Impressum</a> ·
+          <a href="datenschutz.html">Datenschutz</a>
         </p>
       </div>
     </footer>
