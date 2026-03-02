@@ -20,23 +20,6 @@ if (toggle && nav) {
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-// Reservation form demo
-const form = document.getElementById("reservationForm");
-const hint = document.getElementById("formHint");
-if (form && hint) {
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const data = new FormData(form);
-    const name = data.get("name");
-    const date = data.get("date");
-    const time = data.get("time");
-    const guests = data.get("guests");
-
-    hint.textContent = `Danke, ${name}! Anfrage für ${guests} Person(en) am ${date} um ${time} wurde erfasst (Demo).`;
-    form.reset();
-  });
-}
-
 // Lightbox (gallery)
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = lightbox?.querySelector(".lightbox__img");
@@ -55,7 +38,7 @@ function closeLightbox() {
   if (lightboxImg) lightboxImg.src = "";
 }
 
-document.querySelectorAll(".g").forEach((btn) => {
+document.querySelectorAll(".gi").forEach((btn) => {
   btn.addEventListener("click", () => {
     const src = btn.getAttribute("data-src");
     if (src) openLightbox(src);
