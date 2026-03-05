@@ -389,10 +389,85 @@ a:hover{ text-decoration:underline; text-decoration-color:rgba(200,161,90,.55); 
   color: rgba(255,255,255,.62);
 }
 .meta__v{
-  font-size:16px;
-  font-weight:780;
-  line-height:1.25;
+  font-size:  14px;
+  font-weight:650;
+  line-height:1.35;
   overflow-wrap:anywhere;
+  min-width: 0;
+}
+
+/* =========================
+   Öffnungszeiten (kompatibel mit deinem HTML)
+========================= */
+
+/* Sommer/Winter nebeneinander (Desktop), untereinander (Mobile) */
+.meta--hours .hours{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:14px;
+}
+@media (max-width: 760px){
+  .meta--hours .hours{ grid-template-columns: 1fr; }
+}
+
+.meta--hours .hours__col{ min-width:0; }
+
+.meta--hours .hours__title{
+  font-weight:750;
+  margin: 2px 0 10px;
+}
+
+/* DEINE Zeilen: .hours-mini__row */
+.meta--hours .hours-mini__row{
+  display:grid;
+  grid-template-columns: 1fr auto;  /* Tag | Zeit */
+  gap: 6px 12px;
+  align-items: baseline;
+  padding: 8px 0;
+  border-top: 1px solid rgba(255,255,255,.08);
+  min-width:0;
+}
+.meta--hours .hours-mini__row:first-of-type{ border-top:0; }
+
+/* Label-Varianten abfangen */
+.meta--hours .hours__label,
+.meta--hours .hm-label{
+  min-width:0;
+  overflow-wrap:anywhere;
+  color: rgba(255,255,255,.86);
+  font-weight:650;
+}
+
+/* Zeit-Varianten abfangen */
+.meta--hours .hours__time,
+.meta--hours .hm-time{
+  white-space:nowrap;
+  font-variant-numeric: tabular-nums;
+  font-weight:750;
+}
+
+/* Note-Varianten: IMMER in neue Zeile unter Tag+Zeit */
+.meta--hours .hours__note,
+.meta--hours .hm-note{
+  grid-column: 1 / -1;      /* über beide Spalten */
+  margin-top: 2px;
+  font-size: .92em;
+  color: rgba(255,255,255,.68);
+  font-weight:600;
+}
+
+/* deine "Ghost"-Zeile (links leer lassen, aber Ausrichtung behalten) */
+.meta--hours .hm-ghost{
+  visibility:hidden;
+}
+
+/* Ruhetag etwas separieren */
+.meta--hours .hours__closed{
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,.10);
+  font-weight: 700;
+  color: rgba(255,255,255,.80);
 }
 
 /* =========================
