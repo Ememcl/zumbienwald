@@ -290,12 +290,12 @@ a:hover{ text-decoration:underline; text-decoration-color:rgba(200,161,90,.55); 
   position:absolute;
   inset:0;
   background:
-    radial-gradient(900px 520px at 20% 10%, rgba(200,161,90,.18), transparent 55%),
-    linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.55)),
+    radial-gradient(900px 520px at 20% 10%, rgba(200,161,90,.18), transparent 65%),
+    linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.40)),
     url("assets/hero.png");
   background-size: cover;
   background-position: center;
-  filter: saturate(1.05) contrast(1.05) brightness(.95);
+  filter: saturate(1.08) contrast(1.05) brightness(1.1);
   transform: scale(1.02);
 }
 .hero__overlay{
@@ -768,4 +768,5 @@ a:hover{ text-decoration:underline; text-decoration-color:rgba(200,161,90,.55); 
     padding: 14px 20px;
     font-size: 14px;
   }
+
 
