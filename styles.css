@@ -539,8 +539,8 @@ a:hover{ text-decoration:underline; text-decoration-color:rgba(200,161,90,.55); 
 }
 .gi img{
   width:100%;
-  height: 260px;
-  object-fit: cover;
+  height: auto;
+  object-fit: contains;
   display:block;
 }
 .gi:hover{ transform: translateY(-2px); transition: transform .15s ease; }
@@ -769,5 +769,3 @@ a:hover{ text-decoration:underline; text-decoration-color:rgba(200,161,90,.55); 
     font-size: 14px;
   }
 
-  .gi img{ height: 220px; }
-}
